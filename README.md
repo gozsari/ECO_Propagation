@@ -17,12 +17,12 @@
 ### Input file 
 * The input file must be located under **input_folder**.
 * It must be in either a txt or cvs format
-* The colums of input file muust be seperated with either tab or commo.
+* The colums of input file muust be seperated with either space, tab or commo.
 * **First line of input file is assumed to be identification line for each column!**
 
 ### Explanation of Parameters
 * **--inputFile**: gene/protein, annotation and evidence code file containing gene/protein ids, annotations and evidence codes. Input file extension should be: **.txt** or **.csv**
-* **--seperator**: seperator of input file columns, its default value is **tab**, other options can be **tab** or **commo**
+* **--seperator**: seperator of input file columns, its default value is **tab**, other options can be **space** or **commo**
 * **--geneColumn**: gene/protein id/accession column number (integer) in the input file, starting index = 0
 * **--annotationColumn**: annotation column number (integer) in the input file, starting index = 0
 * **--ecoColumn**: evidence code column number (integer) in the input file, starting index = 0
