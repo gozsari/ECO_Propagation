@@ -35,7 +35,7 @@ python main.py --inputFile sample_input.txt --seperator tab --geneColumn 1 --ann
 
 ### Output file
 
-* The results will be located under **output_folder** with the name: **input_fileName_propagated_genes_annotation_ecoIDs.csv**
+* The results will be located under **output_folder** with the name: *input_fileName***_propagated_genes_annotation_ecoIDs.csv**
 
 ## License
 ECO_Propagation
