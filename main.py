@@ -1,6 +1,6 @@
 from propagate_eco import form_all_eco_parents_dict
 from read_eco_obo import read_ecoObo
-from read_gene_info_eco_IDs_from_files import file_reader
+from read_gene_annotation_eco_IDs_from_files import file_reader
 from write_to_file import write_to_file
 import argparse
 
@@ -21,10 +21,10 @@ parser.add_argument(
     default=0,
     help='gene/protein column number in the input file, starting index = 0')
 parser.add_argument(
-    '--infoColumn',
+    '--annotationColumn',
     type=int,
     default=1,
-    help='info column number in the input file, starting index = 0')
+    help='annotation column number in the input file, starting index = 0')
 parser.add_argument(
     '--ecoColumn',
     type=int,
@@ -42,22 +42,22 @@ if __name__ == "__main__":
 
     geneColumn = args.geneColumn
     ecoColumn = args.ecoColumn
-    infoColumn = args.infoColumn
-    gene_info_ecoID_Dict = file_reader(input_file_name, seperator, geneColumn, infoColumn, ecoColumn)
+    annotationColumn = args.annotationColumn
+    gene_info_ecoID_Dict = file_reader(input_file_name, seperator, geneColumn, annotationColumn, ecoColumn)
     eco_term_dict = read_ecoObo()
     eco_parents_dict = form_all_eco_parents_dict(eco_term_dict)
 
-    all_gene_info_ecoIDs_propagated = dict()
+    all_gene_annotation_ecoIDs_propagated = dict()
     for gene_id in gene_info_ecoID_Dict:
-        if gene_id not in all_gene_info_ecoIDs_propagated:
-            all_gene_info_ecoIDs_propagated[gene_id] = dict()
-        for info in gene_info_ecoID_Dict[gene_id]:
+        if gene_id not in all_gene_annotation_ecoIDs_propagated:
+            all_gene_annotation_ecoIDs_propagated[gene_id] = dict()
+        for annotation in gene_info_ecoID_Dict[gene_id]:
             eco_list = set()
-            for eco_id in gene_info_ecoID_Dict[gene_id][info]:
+            for eco_id in gene_info_ecoID_Dict[gene_id][annotation]:
                 eco_list.add(eco_id)
                 for parent_ecoID in eco_parents_dict[eco_id]:
                     eco_list.add(parent_ecoID)
-            all_gene_info_ecoIDs_propagated[gene_id][info] = eco_list
+            all_gene_annotation_ecoIDs_propagated[gene_id][annotation] = eco_list
     output_eco = args.outEco
-    write_to_file(input_file_name, all_gene_info_ecoIDs_propagated, output_eco)
+    write_to_file(input_file_name, all_gene_annotation_ecoIDs_propagated, output_eco)
 

@@ -24,12 +24,12 @@
 * **--inputFile**: gene/protein, annotation and evidence code file containing gene/protein ids, annotations and evidence codes. Input file extension should be: **.txt** or **.csv**
 * **--seperator**: seperator of input file columns, its default value is **tab**, other options can be **tab** or **commo**
 * **--geneColumn**: gene/protein id/accession column number (integer) in the input file, starting index = 0
-* **--infoColumn**: annotation column number (integer) in the input file, starting index = 0
+* **--annotationColumn**: annotation column number (integer) in the input file, starting index = 0
 * **--ecoColumn**: evidence code column number (integer) in the input file, starting index = 0
 * **--outEco**: evidence code(e.g. ECO:0000265) of the annotations that you would like to have in your output file 
 ### A sample command to run ECO_Propagation is as follows:
 ```
-python main.py --inputFile sample_input.txt --seperator tab --geneColumn 1 --infoColumn 4 --ecoColumn 6 --outEco ECO:0000265
+python main.py --inputFile sample_input.txt --seperator tab --geneColumn 1 --annotationColumn 4 --ecoColumn 6 --outEco ECO:0000265
 
 ```
 
