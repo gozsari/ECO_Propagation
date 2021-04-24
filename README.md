@@ -1,5 +1,5 @@
 # ECO_Propagation
- This repository is created to propagate evidence codes(ECO) with respect to ECO hierarchy defined in **eco.obo** file by using **is_a**.
+ This repository is created to propagate evidence codes(ECO) with respect to ECO hierarchy defined in **eco.obo** file by using **is_a** relations.
 * The following figure shows a sample of evidence code(ECO) hierarchy
 ![alt text](https://github.com/gozsari/ECO_Propagation/blob/main/images/eco.PNG)
 
